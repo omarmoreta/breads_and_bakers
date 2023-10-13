@@ -4,15 +4,15 @@ const Bread = require("../models/bread");
 
 // GET /breads
 breads.get("/", (req, res) => {
-  res.render("index", {
+  res.status(200).render("index", {
     breads: Bread,
     title: "Index Page",
-  });
+  })
 });
 
 // GET /breads/:arrayIndex
 breads.get("/:arrayIndex", (req, res) => {
-  res.send(Bread[req.params.arrayIndex]);
+  res.status(200).send(Bread[req.params.arrayIndex]);
 });
 
 module.exports = breads;

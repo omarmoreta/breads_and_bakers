@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest --colors"
   },
+  "nodemonConfig": {
+    "ext": "jsx,js,json,html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
