@@ -1,11 +1,10 @@
 const React = require('react');
 const Default = require('./layouts/default');
 
-function Index ({ breads }) {
+function Index ({ breads, title }) {
     return (
-        <Default>
-            <h2>Index Page</h2>
-            {/* <p>I have {breads[0].name} bread!</p>*/}
+        <Default title={ title }>
+            <h2>{ title }</h2>
             <ul>
                 {
                     breads.map( ( bread, index) => {
