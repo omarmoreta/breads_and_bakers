@@ -15,7 +15,8 @@ describe("Test the breads controller index path", () => {
 });
 
 describe("Test the breads show path", () => {
-  test("GET '/breads/[arrayIndex]' should return 200 OK status", async () => {
-    return request(app).get("/breads/0").expect(200);
+  test("GET '/breads/[arrayIndex]' should return HTML page", async () => {
+    const response = await request(app).get("/breads/0");
+    expect(response.text).toContain("<!DOCTYPE html>");
   });
 });
