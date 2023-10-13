@@ -14,6 +14,6 @@ function Default (html) {
             </body>
         </html>
     )
-}
+};
 
-module.export = Default;
+module.exports = Default;
