@@ -7,6 +7,7 @@ const createEngine = require("express-react-views").createEngine();
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", createEngine);
+app.use(express.static("public"));
 
 // Controller
 app.use("/breads", breadsController);
@@ -14,6 +15,11 @@ app.use("/breads", breadsController);
 // GET /
 app.get("/", (req, res) => {
   res.send("Welcome to an Awesome App about BREADS!");
+});
+
+// 404 Page
+app.get("*", (req, res) => {
+  res.status(404).send("404");
 });
 
 module.exports = app;

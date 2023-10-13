@@ -7,12 +7,18 @@ breads.get("/", (req, res) => {
   res.status(200).render("index", {
     breads: Bread,
     title: "Index Page",
-  })
+  });
 });
 
 // GET /breads/:arrayIndex
 breads.get("/:arrayIndex", (req, res) => {
-  res.status(200).send(Bread[req.params.arrayIndex]);
+  if (Bread[req.params.arrayIndex]) {
+    res.status(200).render("show", {
+      bread: Bread[req.params.arrayIndex],
+    });
+  } else {
+    res.status(404).send("404");
+  }
 });
 
 module.exports = breads;
