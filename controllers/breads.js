@@ -17,7 +17,7 @@ breads.get("/:arrayIndex", (req, res) => {
       bread: Bread[req.params.arrayIndex],
     });
   } else {
-    res.status(404).send("404");
+    res.status(404).render("404");
   }
 });
 

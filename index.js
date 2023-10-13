@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 // 404 Page
 app.get("*", (req, res) => {
-  res.status(404).send("404");
+  res.status(404).render("404");
 });
 
 module.exports = app;
