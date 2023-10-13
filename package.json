@@ -6,11 +6,17 @@
   "scripts": {
     "test": "jest --colors"
   },
+  "nodemonConfig": {
+    "ext": "jsx,js,json,html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-react-views": "^0.11.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",

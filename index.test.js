@@ -8,8 +8,9 @@ describe("Test the root path", () => {
 });
 
 describe("Test the breads controller index path", () => {
-  test("GET '/breads' should return 200 OK status", async () => {
-    return request(app).get("/breads").expect(200);
+  test("GET '/breads' should render an HTML page", async () => {
+    const response = await request(app).get("/breads");
+    expect(response.text).toContain("<!DOCTYPE html>");
   });
 });
 
