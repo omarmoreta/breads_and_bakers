@@ -1,5 +1,5 @@
 const React = require('react');
-const Default = require('./layouts/default');
+const Default = require('./layouts/Default');
 
 function Index ({ breads, title }) {
     return (
@@ -17,6 +17,13 @@ function Index ({ breads, title }) {
                         )
                     })
                 }
+                <div className="newButton">
+                    <a href="/breads/new">
+                        <button>
+                            Add a new bread
+                        </button>
+                    </a>
+                </div>
             </ul>
         </Default>
     )
