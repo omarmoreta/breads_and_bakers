@@ -2,14 +2,15 @@ const express = require("express");
 const app = express();
 const breadsController = require("./controllers/breads");
 const createEngine = require("express-react-views").createEngine();
+const methodOverride = require("method-override");
 
 // Middleware
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", createEngine);
 app.use(express.static("public"));
-app.use(express.urlencoded({extended: true}))
-
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 // Controller
 app.use("/breads", breadsController);
