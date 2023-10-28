@@ -8,6 +8,8 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", createEngine);
 app.use(express.static("public"));
+app.use(express.urlencoded({extended: true}))
+
 
 // Controller
 app.use("/breads", breadsController);
